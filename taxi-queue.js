@@ -9,8 +9,9 @@ function TaxiQueue() {
 	}
 
 	function leaveQueue() {
+		if(_counter > 0){
 		_counter--
-
+		}
 	}
 
 	function joinTaxiQueue() {

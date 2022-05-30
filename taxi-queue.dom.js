@@ -34,13 +34,13 @@ localStorage.setItem('joinQueue', taxiQueue.queueLength() )
 join_taxi_queue.addEventListener('click', function(){
 
    taxiQueue.joinTaxiQueue()
-   document.querySelector(".taxi_count").innerHTML = taxiQueue.taxiQueueLength()
-   localStorage.setItem('joinQueue', taxiQueue.taxiQueueLength() )
+   document.querySelector(".taxi_queue_count").innerHTML = taxiQueue.taxiQueueLength()
+   localStorage.setItem('joinTaxiQueue', taxiQueue.taxiQueueLength() )
 })
 
 depart.addEventListener('click',function(){
     taxiQueue.taxiDepart()
     document.querySelector(".count").innerHTML = taxiQueue.taxiQueueLength()
-    localStorage.setItem('joinQueue', taxiQueue.taxiQueueLength() )
+    localStorage.setItem('taxiDepart', taxiQueue.taxiQueueLength() )
 
 })

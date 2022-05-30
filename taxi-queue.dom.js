@@ -15,14 +15,17 @@ const taxiQueue = TaxiQueue();
 join_queue.addEventListener('click', function(){
 
     taxiQueue.joinQueue()
-    console.log(taxiQueue.joinQueue())
-taxiQueue.innerHTML = taxiQueue.joinQueue()
+  
+document.querySelector(".count").innerHTML = taxiQueue.queueLength()
+
+localStorage.setItem('joinQueue', taxiQueue.queueLength() )
 
 })
 
 leave_queue.addEventListener('click', function(){
 taxiQueue.leaveQueue()
-console.log(taxiQueue.leaveQueue())
+document.querySelector(".count").innerHTML = taxiQueue.queueLength()
+localStorage.setItem('joinQueue', taxiQueue.queueLength() )
 
 
 })
@@ -31,9 +34,13 @@ console.log(taxiQueue.leaveQueue())
 join_taxi_queue.addEventListener('click', function(){
 
    taxiQueue.joinTaxiQueue()
+   document.querySelector(".taxi_count").innerHTML = taxiQueue.taxiQueueLength()
+   localStorage.setItem('joinQueue', taxiQueue.taxiQueueLength() )
 })
 
 depart.addEventListener('click',function(){
+    taxiQueue.taxiDepart()
+    document.querySelector(".count").innerHTML = taxiQueue.taxiQueueLength()
+    localStorage.setItem('joinQueue', taxiQueue.taxiQueueLength() )
 
-    alert("depart ")
 })
